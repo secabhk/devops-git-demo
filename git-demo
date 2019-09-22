@@ -1,0 +1,617 @@
+Script started on Sun Sep 22 09:25:11 2019
+[?1034hbash-3.2$ 
+bash-3.2$ pwd
+/Users/abhishek/GIT
+bash-3.2$ c[Kmkid[K[K[K[Kmkdir demo
+bash-3.2$ cd f[Kdemo/
+bash-3.2$ git status
+fatal: not a git repository (or any of the parent directories): .git
+bash-3.2$ 
+bash-3.2$ 
+bash-3.2$ git init
+Initialized empty Git repository in /Users/abhishek/GIT/demo/.git/
+bash-3.2$ 
+bash-3.2$ 
+bash-3.2$ touch a.txt b.txt[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kecho "fin[Kle1" > f1.txt 
+bash-3.2$ echo "file1" > f1.txt [1P[1@2[1P[1@2
+bash-3.2$ ls
+f1.txt	f2.txt
+bash-3.2$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31mf1.txt[m
+	[31mf2.txt[m
+
+nothing added to commit but untracked files present (use "git add" to track)
+bash-3.2$ git co[K[Kadd .
+bash-3.2$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	[32mnew file:   f1.txt[m
+	[32mnew file:   f2.txt[m
+
+bash-3.2$ git commit -m "adding f1.txt , f2.txt"
+[master (root-commit) 43b99f6] adding f1.txt , f2.txt
+ 2 files changed, 2 insertions(+)
+ create mode 100644 f1.txt
+ create mode 100644 f2.txt
+bash-3.2$ git status
+On branch master
+nothing to commit, working tree clean
+bash-3.2$ ls
+f1.txt	f2.txt
+bash-3.2$ # Adding a remote repositroy[K[K[Kory
+bash-3.2$ git remote origin https://github.com/secabhk/devops-git-demo.git[1@a[1@d[1@d[1@ 
+bash-3.2$ git remote -v
+origin	https://github.com/secabhk/devops-git-demo.git (fetch)
+origin	https://github.com/secabhk/devops-git-demo.git (push)
+bash-3.2$ 
+bash-3.2$ 
+bash-3.2$ git pull origin master
+warning: no common commits
+remote: Enumerating objects: 3, done.[K
+remote: Counting objects:  33% (1/3)[Kremote: Counting objects:  66% (2/3)[Kremote: Counting objects: 100% (3/3)[Kremote: Counting objects: 100% (3/3), done.[K
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0[K
+Unpacking objects:  33% (1/3)   Unpacking objects:  66% (2/3)   Unpacking objects: 100% (3/3)   Unpacking objects: 100% (3/3), done.
+From https://github.com/secabhk/devops-git-demo
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> origin/master
+fatal: refusing to merge unrelated histories
+bash-3.2$ ls
+f1.txt	f2.txt
+bash-3.2$ lsgit pull origin master[C[C[C[C[C[C[C[C[C[C[C[C[C[C[9Premote -vpull origin master[1P[1P[1@s[1@h
+To https://github.com/secabhk/devops-git-demo.git
+ [31m! [rejected]       [m master -> master (non-fast-forward)
+[31merror: failed to push some refs to 'https://github.com/secabhk/devops-git-demo.git'
+[m[33mhint: Updates were rejected because the tip of your current branch is behind[m
+[33mhint: its remote counterpart. Integrate the remote changes (e.g.[m
+[33mhint: 'git pull ...') before pushing again.[m
+[33mhint: See the 'Note about fast-forwards' in 'git push --help' for details.[m
+bash-3.2$ git pull remo[K[K[K[Korigin master
+From https://github.com/secabhk/devops-git-demo
+ * branch            master     -> FETCH_HEAD
+fatal: refusing to merge unrelated histories
+bash-3.2$ pwd
+/Users/abhishek/GIT/demo
+bash-3.2$ git clone https://github.com/secabhk/devops-git-demo.git
+Cloning into 'devops-git-demo'...
+remote: Enumerating objects: 3, done.[K
+remote: Counting objects:  33% (1/3)[Kremote: Counting objects:  66% (2/3)[Kremote: Counting objects: 100% (3/3)[Kremote: Counting objects: 100% (3/3), done.[K
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0[K
+Unpacking objects:  33% (1/3)   Unpacking objects:  66% (2/3)   Unpacking objects: 100% (3/3)   Unpacking objects: 100% (3/3), done.
+bash-3.2$ ls
+devops-git-demo	f1.txt		f2.txt
+bash-3.2$ mv f1.txt  f2.txt devops-git-demo/
+.git/      README.md  
+bash-3.2$ mv f1.txt  f2.txt devops-git-demo/
+bash-3.2$ cd devops-git-demo/
+bash-3.2$ ls
+README.md	f1.txt		f2.txt
+bash-3.2$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31mf1.txt[m
+	[31mf2.txt[m
+
+nothing added to commit but untracked files present (use "git add" to track)
+bash-3.2$ git add . 
+bash-3.2$ git commit -m "2nd commit"
+[master 5f59cb5] 2nd commit
+ 2 files changed, 2 insertions(+)
+ create mode 100644 f1.txt
+ create mode 100644 f2.txt
+bash-3.2$ 
+bash-3.2$ 
+bash-3.2$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+bash-3.2$ git push origin master
+Enumerating objects: 5, done.
+Counting objects:  20% (1/5)   Counting objects:  40% (2/5)   Counting objects:  60% (3/5)   Counting objects:  80% (4/5)   Counting objects: 100% (5/5)   Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects:  50% (1/2)   Compressing objects: 100% (2/2)   Compressing objects: 100% (2/2), done.
+Writing objects:  25% (1/4)   Writing objects:  50% (2/4)   Writing objects:  75% (3/4)   Writing objects: 100% (4/4)   Writing objects: 100% (4/4), 310 bytes | 310.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+To https://github.com/secabhk/devops-git-demo.git
+   0174118..5f59cb5  master -> master
+bash-3.2$ 
+bash-3.2$ # Pushed files to remote e[Krepo.. 
+bash-3.2$ 
+bash-3.2$ #[Kls
+README.md	f1.txt		f2.txt
+bash-3.2$ git branch feature1
+bash-3.2$ git branch
+[?1h=  feature1[m[m
+* [32mmaster[m[m
+[K[?1l>bash-3.2$ git checkout feature1
+Switched to branch 'feature1'
+bash-3.2$ git branch
+[?1h=* [32mfeature1[m[m
+  master[m[m
+[K[?1l>bash-3.2$ ls
+README.md	f1.txt		f2.txt
+bash-3.2$ echo "file3" > f3.txt
+bash-3.2$ ls
+README.md	f1.txt		f2.txt		f3.txt
+bash-3.2$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+bash-3.2$ git branch
+[?1h=  feature1[m[m
+* [32mmaster[m[m
+[K[?1l>bash-3.2$ ks
+bash: ks: command not found
+bash-3.2$ ls
+README.md	f1.txt		f2.txt		f3.txt
+bash-3.2$ git checkout feature1
+Switched to branch 'feature1'
+bash-3.2$ ls
+README.md	f1.txt		f2.txt		f3.txt
+bash-3.2$ git add fe[K3.txt 
+bash-3.2$ git status
+On branch feature1
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	[32mnew file:   f3.txt[m
+
+bash-3.2$ git stash
+Saved working directory and index state WIP on feature1: 5f59cb5 2nd commit
+bash-3.2$ git[K[K[Kls
+README.md	f1.txt		f2.txt
+bash-3.2$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+bash-3.2$ ls
+README.md	f1.txt		f2.txt
+bash-3.2$ # f3 is not here.. as we have pushed the work[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kdid [K[K[K[K[K performed [1@a[1P[1@h[1@a[1@d[1@ [C[C[C[C[C[C[C[C[C[C " s t a t s [1P [1P s h " [C i n [C f e a [1P [1P [1P b r a n c h [C f e a t u r e 1 
+bash-3.2$ git branch
+[?1h=  feature1[m[m
+* [32mmaster[m[m
+[K[?1l>bash-3.2$ 
+bash-3.2$ 
+bash-3.2$ ls
+README.md	f1.txt		f2.txt
+bash-3.2$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+bash-3.2$ git [K[Kt [K[K[K[Kgit checkout feature1
+Switched to branch 'feature1'
+bash-3.2$ ls
+README.md	f1.txt		f2.txt
+bash-3.2$ git status
+On branch feature1
+nothing to commit, working tree clean
+bash-3.2$ git branch
+[?1h=* [32mfeature1[m[m
+  master[m[m
+[K[?1l>bash-3.2$ git stash pop
+On branch feature1
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	[32mnew file:   f3.txt[m
+
+Dropped refs/stash@{0} (550ca149c1c53da3cea36b6022037f545c21e7a4)
+bash-3.2$ ls
+README.md	f1.txt		f2.txt		f3.txt
+bash-3.2$ cat f3.txt 
+file3
+bash-3.2$ git add .
+bash-3.2$ git commit -m "adding f3.txt in fear[Kture branch"
+[feature1 47cd72a] adding f3.txt in feature branch
+ 1 file changed, 1 insertion(+)
+ create mode 100644 f3.txt
+bash-3.2$ git status
+On branch feature1
+nothing to commit, working tree clean
+bash-3.2$ 
+bash-3.2$ 
+bash-3.2$ git push origin feature1
+Enumerating objects: 10, done.
+Counting objects:  10% (1/10)   Counting objects:  20% (2/10)   Counting objects:  30% (3/10)   Counting objects:  40% (4/10)   Counting objects:  50% (5/10)   Counting objects:  60% (6/10)   Counting objects:  70% (7/10)   Counting objects:  80% (8/10)   Counting objects:  90% (9/10)   Counting objects: 100% (10/10)   Counting objects: 100% (10/10), done.
+Delta compression using up to 4 threads
+Compressing objects:  20% (1/5)   Compressing objects:  40% (2/5)   Compressing objects:  60% (3/5)   Compressing objects:  80% (4/5)   Compressing objects: 100% (5/5)   Compressing objects: 100% (5/5), done.
+Writing objects:  10% (1/10)   Writing objects:  20% (2/10)   Writing objects:  30% (3/10)   Writing objects:  40% (4/10)   Writing objects:  50% (5/10)   Writing objects:  60% (6/10)   Writing objects:  70% (7/10)   Writing objects:  80% (8/10)   Writing objects:  90% (9/10)   Writing objects: 100% (10/10)   Writing objects: 100% (10/10), 1.08 KiB | 1.08 MiB/s, done.
+Total 10 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/1)[Kremote: Resolving deltas: 100% (1/1)[Kremote: Resolving deltas: 100% (1/1), done.[K
+remote: 
+remote: Create a pull request for 'feature1' on GitHub by visiting:[K
+remote:      https://github.com/secabhk/devops-git-demo/pull/new/feature1[K
+remote: 
+To https://github.com/secabhk/devops-git-demo.git
+ * [new branch]      feature1 -> feature1
+bash-3.2$ 
+bash-3.2$ 
+bash-3.2$ 
+bash-3.2$ 
+bash-3.2$ git branch
+[?1h=* [32mfeature1[m[m
+  master[m[m
+[K[?1l>bash-3.2$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+bash-3.2$ ls
+README.md	f1.txt		f2.txt
+bash-3.2$ git pull origin master
+remote: Enumerating objects: 4, done.[K
+remote: Counting objects:  25% (1/4)[Kremote: Counting objects:  50% (2/4)[Kremote: Counting objects:  75% (3/4)[Kremote: Counting objects: 100% (4/4)[Kremote: Counting objects: 100% (4/4), done.[K
+remote: Compressing objects:  50% (1/2)[Kremote: Compressing objects: 100% (2/2)[Kremote: Compressing objects: 100% (2/2), done.[K
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0[K
+Unpacking objects:  33% (1/3)   Unpacking objects:  66% (2/3)   Unpacking objects: 100% (3/3)   Unpacking objects: 100% (3/3), done.
+From https://github.com/secabhk/devops-git-demo
+ * branch            master     -> FETCH_HEAD
+   5f59cb5..d35b0f6  master     -> origin/master
+Updating 5f59cb5..d35b0f6
+Fast-forward
+ created-on-github | 1 [32m+[m
+ 1 file changed, 1 insertion(+)
+ create mode 100644 created-on-github
+bash-3.2$ ls
+README.md		f1.txt
+created-on-github	f2.txt
+bash-3.2$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+bash-3.2$ ls
+README.md		f1.txt
+created-on-github	f2.txt
+bash-3.2$ ca[K[Kcat created-on-github 
+this file was created on github
+bash-3.2$ 
+bash-3.2$ # Will try to revert to previous state ; the time before fi[K[Kthe fil [Ke "cre ated[K[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[C[C[C[C[C[C[C[C[C[Ccat created-on-github [K[C[C[C[C[C[C[C[C[C[C# Will try to revert to previous state ; the time before the file "cre ated on gitb[Khub" was pulled
+bash-3.2$ 
+bash-3.2$ 
+bash-3.2$ git log 
+[?1h=[33mcommit d35b0f6d04f26f83a3bb9a12719eccfc06b179a6[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31m[m [33m[m[33m[m[1;36m[m[1;32m[m[33m[m[1;31m[m[33m[m[1;31morigin/HEAD[m[33m)[m[m
+Author: secabhk <53970719+secabhk@users.noreply.github.com>[m
+Date:   Sun Sep 22 09:38:30 2019 +0530[m
+[m
+    Create created-on-github[m
+    [m
+    added new file[m
+[m
+[33mcommit 5f59cb5115dd9ad0c5b1842939fbe3859dd3e35d[m[m
+Author: secabhk <secabhk@gmail.com>[m
+Date:   Sun Sep 22 09:33:17 2019 +0530[m
+[m
+    2nd commit[m
+[m
+[33mcommit 017411864e43fde043e00ca631d271696ed8783e[m[m
+Author: secabhk <53970719+secabhk@users.noreply.github.com>[m
+Date:   Sun Sep 22 09:28:20 2019 +0530[m
+[m
+    Initial commit[m
+[K[?1l>bash-3.2$ git log | more
+[?1h=commit d35b0f6d04f26f83a3bb9a12719eccfc06b179a6
+Author: secabhk <53970719+secabhk@users.noreply.github.com>
+Date:   Sun Sep 22 09:38:30 2019 +0530
+
+    Create created-on-github
+    
+    added new file
+
+commit 5f59cb5115dd9ad0c5b1842939fbe3859dd3e35d
+Author: secabhk <secabhk@gmail.com>
+Date:   Sun Sep 22 09:33:17 2019 +0530
+
+    2nd commit
+
+commit 017411864e43fde043e00ca631d271696ed8783e
+Author: secabhk <53970719+secabhk@users.noreply.github.com>
+Date:   Sun Sep 22 09:28:20 2019 +0530
+
+    Initial commit
+[7m(END)[27m[K[K[?1l>bash-3.2$ 
+bash-3.2$ 
+bash-3.2$ git revert 5f59cb5115dd9ad0c5b1842939fbe3859dd3e35d
+hint: Waiting for your editor to close the file... [?2004h[?1049h[?1h=[?2004h[1;24r[?12h[?12l[27m[29m[m[H[2J[?25l[24;1H"~/GIT/demo/devops-git-demo/.git/COMMIT_EDITMSG" 14L, 363C[2;1H▽[6n[2;1H  [1;1H[>c]11;?[1;1HRevert "2nd commit"
+
+This reverts commit 5f59cb5115dd9ad0c5b1842939fbe3859dd3e35d.
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+# Your branch is up to date with 'origin/master'.
+#
+# Changes to be committed:
+#[7Cdeleted:    f1.txt
+#[7Cdeleted:    f2.txt
+#
+[94m~                                                                               [16;1H~                                                                               [17;1H~                                                                               [18;1H~                                                                               [19;1H~                                                                               [20;1H~                                                                               [21;1H~                                                                               [22;1H~                                                                               [23;1H~                                                                               [1;1H[?25h[?25l[m[24;1H[K[24;1H:[?2004h[?25hq![?25l[?2004l[24;1H[K[24;1H[?2004l[?1l>[?25h[?1049l[K[master 01eb9dc] Revert "2nd commit"
+ 2 files changed, 2 deletions(-)
+ delete mode 100644 f1.txt
+ delete mode 100644 f2.txt
+bash-3.2$ git revert 5f59cb5115dd9ad0c5b1842939fbe3859dd3e35d[C[C[C[C[C[C[C[C[C[C[C[C[C[Clog | more[K
+[?1h=commit 01eb9dc8bf9cb2adee4c3e1fb16c4b18fcb1d85a
+Author: secabhk <secabhk@gmail.com>
+Date:   Sun Sep 22 09:44:55 2019 +0530
+
+    Revert "2nd commit"
+    
+    This reverts commit 5f59cb5115dd9ad0c5b1842939fbe3859dd3e35d.
+
+commit d35b0f6d04f26f83a3bb9a12719eccfc06b179a6
+Author: secabhk <53970719+secabhk@users.noreply.github.com>
+Date:   Sun Sep 22 09:38:30 2019 +0530
+
+    Create created-on-github
+    
+    added new file
+
+commit 5f59cb5115dd9ad0c5b1842939fbe3859dd3e35d
+Author: secabhk <secabhk@gmail.com>
+Date:   Sun Sep 22 09:33:17 2019 +0530
+
+    2nd commit
+
+commit 017411864e43fde043e00ca631d271696ed8783e
+:[K[KAuthor: secabhk <53970719+secabhk@users.noreply.github.com>
+Date:   Sun Sep 22 09:28:20 2019 +0530
+
+    Initial commit
+[7m(END)[27m[K[K[K[?1l>bash-3.2$ 
+bash-3.2$ 
+bash-3.2$ ls
+README.md		created-on-github
+bash-3.2$ git[K[K[K# those two files are gone.. 
+bash-3.2$ # lets see if we can get them back
+bash-3.2$ git log | more
+[?1h=commit 01eb9dc8bf9cb2adee4c3e1fb16c4b18fcb1d85a
+Author: secabhk <secabhk@gmail.com>
+Date:   Sun Sep 22 09:44:55 2019 +0530
+
+    Revert "2nd commit"
+    
+    This reverts commit 5f59cb5115dd9ad0c5b1842939fbe3859dd3e35d.
+
+commit d35b0f6d04f26f83a3bb9a12719eccfc06b179a6
+Author: secabhk <53970719+secabhk@users.noreply.github.com>
+Date:   Sun Sep 22 09:38:30 2019 +0530
+
+    Create created-on-github
+    
+    added new file
+
+commit 5f59cb5115dd9ad0c5b1842939fbe3859dd3e35d
+Author: secabhk <secabhk@gmail.com>
+Date:   Sun Sep 22 09:33:17 2019 +0530
+
+    2nd commit
+
+commit 017411864e43fde043e00ca631d271696ed8783e
+:[K[KAuthor: secabhk <53970719+secabhk@users.noreply.github.com>
+Date:   Sun Sep 22 09:28:20 2019 +0530
+
+    Initial commit
+[7m(END)[27m[K[K[K[?1l>bash-3.2$       git revert 017411864e43fde043e00ca631d271696ed8783e
+hint: Waiting for your editor to close the file... [?2004h[?1049h[?1h=[?2004h[1;24r[?12h[?12l[27m[29m[m[H[2J[?25l[24;1H"~/GIT/demo/devops-git-demo/.git/COMMIT_EDITMSG" 14L, 405C[2;1H▽[6n[2;1H  [1;1H[>c]11;?[1;1HRevert "Initial commit"
+
+This reverts commit 017411864e43fde043e00ca631d271696ed8783e.
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+# Your branch is ahead of 'origin/master' by 1 commit.
+#   (use "git push" to publish your local commits)
+#
+# Changes to be committed:
+#[7Cdeleted:    README.md
+#
+[94m~                                                                               [16;1H~                                                                               [17;1H~                                                                               [18;1H~                                                                               [19;1H~                                                                               [20;1H~                                                                               [21;1H~                                                                               [22;1H~                                                                               [23;1H~                                                                               [1;1H[?25h[?25l[m[24;1H[K[24;1H:[?2004h[?25hq![?25l[?2004l[24;1H[K[24;1H[?2004l[?1l>[?25h[?1049l[K[master ab11acb] Revert "Initial commit"
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 README.md
+bash-3.2$ ls
+created-on-github
+bash-3.2$ 
+bash-3.2$ 
+bash-3.2$ git branch
+[?1h=  feature1[m[m
+* [32mmaster[m[m
+[K[?1l>bash-3.2$ git pull origin master
+From https://github.com/secabhk/devops-git-demo
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+bash-3.2$ ls
+created-on-github
+bash-3.2$ lsgit pull origin master[K[K[K[K[K[Kfeature1
+From https://github.com/secabhk/devops-git-demo
+ * branch            feature1   -> FETCH_HEAD
+hint: Waiting for your editor to close the file... [?2004h[?1049h[?1h=[?2004h[1;24r[?12h[?12l[27m[29m[m[H[2J[?25l[24;1H"~/GIT/demo/devops-git-demo/.git/MERGE_MSG" 7L, 297C[2;1H▽[6n[2;1H  [1;1H[>c]11;?[1;1HMerge branch 'feature1' of https://github.com/secabhk/devops-git-demo
+
+# Please enter a commit message to explain why this merge is necessary,
+# especially if it merges an updated upstream into a topic branch.
+#
+# Lines starting with '#' will be ignored, and an empty message aborts
+# the commit.
+[94m~                                                                               [9;1H~                                                                               [10;1H~                                                                               [11;1H~                                                                               [12;1H~                                                                               [13;1H~                                                                               [14;1H~                                                                               [15;1H~                                                                               [16;1H~                                                                               [17;1H~                                                                               [18;1H~                                                                               [19;1H~                                                                               [20;1H~                                                                               [21;1H~                                                                               [22;1H~                                                                               [23;1H~                                                                               [1;1H[?25h[?25l[m[24;1H[K[24;1H:[?2004h[?25hx[?25l[?2004l[24;1H[K[24;1H[?2004l[?1l>[?25h[?1049l[KMerge made by the 'recursive' strategy.
+ f3.txt | 1 [32m+[m
+ 1 file changed, 1 insertion(+)
+ create mode 100644 f3.txt
+bash-3.2$ ls
+created-on-github	f3.txt
+bash-3.2$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 4 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+bash-3.2$ ls
+created-on-github	f3.txt
+bash-3.2$ rm [K[K[Kgit clone origin feature1
+fatal: repository 'origin' does not exist
+bash-3.2$ pwd
+/Users/abhishek/GIT/demo/devops-git-demo
+bash-3.2$ 
+bash-3.2$ 
+bash-3.2$ 
+bash-3.2$ ls
+created-on-github	f3.txt
+bash-3.2$ git pull origin master
+From https://github.com/secabhk/devops-git-demo
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+bash-3.2$ ls
+created-on-github	f3.txt
+bash-3.2$ rm created-on-github  f3.txt 
+bash-3.2$ ls
+bash-3.2$ git clone o[K[K[K[K[K[K[Kremor[Kte -v 
+origin	https://github.com/secabhk/devops-git-demo.git (fetch)
+origin	https://github.com/secabhk/devops-git-demo.git (push)
+bash-3.2$ git pull 
+Already up to date.
+bash-3.2$ git pull [Kls
+bash-3.2$ go[Kit clon[K[K[K[Kclone https://github.com/secabhk/devops-git-demo.git
+Cloning into 'devops-git-demo'...
+remote: Enumerating objects: 13, done.[K
+remote: Counting objects:   7% (1/13)[Kremote: Counting objects:  15% (2/13)[Kremote: Counting objects:  23% (3/13)[Kremote: Counting objects:  30% (4/13)[Kremote: Counting objects:  38% (5/13)[Kremote: Counting objects:  46% (6/13)[Kremote: Counting objects:  53% (7/13)[Kremote: Counting objects:  61% (8/13)[Kremote: Counting objects:  69% (9/13)[Kremote: Counting objects:  76% (10/13)[Kremote: Counting objects:  84% (11/13)[Kremote: Counting objects:  92% (12/13)[Kremote: Counting objects: 100% (13/13)[Kremote: Counting objects: 100% (13/13), done.[K
+remote: Compressing objects:  16% (1/6)[Kremote: Compressing objects:  33% (2/6)[Kremote: Compressing objects:  50% (3/6)[Kremote: Compressing objects:  66% (4/6)[Kremote: Compressing objects:  83% (5/6)[Kremote: Compressing objects: 100% (6/6)[Kremote: Compressing objects: 100% (6/6), done.[K
+remote: Total 13 (delta 2), reused 9 (delta 1), pack-reused 0[K
+Unpacking objects:   7% (1/13)   Unpacking objects:  15% (2/13)   Unpacking objects:  23% (3/13)   Unpacking objects:  30% (4/13)   Unpacking objects:  38% (5/13)   Unpacking objects:  46% (6/13)   Unpacking objects:  53% (7/13)   Unpacking objects:  61% (8/13)   Unpacking objects:  69% (9/13)   Unpacking objects:  76% (10/13)   Unpacking objects:  84% (11/13)   Unpacking objects:  92% (12/13)   Unpacking objects: 100% (13/13)   Unpacking objects: 100% (13/13), done.
+bash-3.2$ ls
+devops-git-demo
+bash-3.2$ pwd
+/Users/abhishek/GIT/demo/devops-git-demo
+bash-3.2$ cd devops-git-demo/
+bash-3.2$ ls
+README.md		f1.txt
+created-on-github	f2.txt
+bash-3.2$ ls
+README.md		f1.txt
+created-on-github	f2.txt
+bash-3.2$ git check[K[K[K[K[Kbranch
+[?1h=* [32mmaster[m[m
+[K[?1l>bash-3.2$ cd ../
+bash-3.2$ ls
+devops-git-demo
+bash-3.2$ l=[K[Kcd ../
+bash-3.2$ ls
+devops-git-demo
+bash-3.2$ c[Kls
+devops-git-demo
+bash-3.2$ cd ../
+bash-3.2$ ls
+demo		git-demo
+bash-3.2$ pwd
+/Users/abhishek/GIT
+bash-3.2$ ls -ltr
+total 56
+drwxr-xr-x  4 abhishek  staff    128 Sep 22 09:32 demo
+-rw-r--r--  1 abhishek  staff  24994 Sep 22 09:52 git-demo
+bash-3.2$ cd e[Kdemo/
+.git/            devops-git-demo/ 
+bash-3.2$ cd demo/devops-git-demo/
+bash-3.2$ ls
+devops-git-demo
+bash-3.2$ cd devops-git-demo/
+bash-3.2$ ls
+README.md		f1.txt
+created-on-github	f2.txt
+bash-3.2$ pwd
+/Users/abhishek/GIT/demo/devops-git-demo/devops-git-demo
+bash-3.2$ git branch
+[?1h=* [32mmaster[m[m
+[K[?1l>bash-3.2$ ls
+README.md		f1.txt
+created-on-github	f2.txt
+bash-3.2$ touch fx.txt
+bash-3.2$ git dig[Kff HEAD .
+[?1h=[K[?1l>bash-3.2$ 
+bash-3.2$ 
+bash-3.2$ ls
+README.md		f1.txt			fx.txt
+created-on-github	f2.txt
+bash-3.2$ git branch
+[?1h=* [32mmaster[m[m
+[K[?1l>bash-3.2$ cp ../
+.git/            devops-git-demo/ 
+bash-3.2$ cp ../devops-git-demo/
+.git/              created-on-github  f2.txt             
+README.md          f1.txt             fx.txt             
+bash-3.2$ cp ../devops-git-demo/[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K
+bash-3.2$ 
+bash-3.2$ ls
+README.md		f1.txt			fx.txt
+created-on-github	f2.txt
+bash-3.2$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31mfx.txt[m
+
+nothing added to commit but untracked files present (use "git add" to track)
+bash-3.2$ git add fx.txt 
+bash-3.2$ git commit -m "added fx.txt"
+[master 600ec2f] added fx.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 fx.txt
+bash-3.2$ 
+bash-3.2$ 
+bash-3.2$ git push origin master
+Enumerating objects: 4, done.
+Counting objects:  25% (1/4)   Counting objects:  50% (2/4)   Counting objects:  75% (3/4)   Counting objects: 100% (4/4)   Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects:  50% (1/2)   Compressing objects: 100% (2/2)   Compressing objects: 100% (2/2), done.
+Writing objects:  33% (1/3)   Writing objects:  66% (2/3)   Writing objects: 100% (3/3)   Writing objects: 100% (3/3), 263 bytes | 263.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/1)[Kremote: Resolving deltas: 100% (1/1)[Kremote: Resolving deltas: 100% (1/1), completed with 1 local object.[K
+To https://github.com/secabhk/devops-git-demo.git
+   d35b0f6..600ec2f  master -> master
+bash-3.2$ 
+bash-3.2$ 
+bash-3.2$ 
+bash-3.2$ 
+bash-3.2$ gi[Kit remote -v
+origin	https://github.com/secabhk/devops-git-demo.git (fetch)
+origin	https://github.com/secabhk/devops-git-demo.git (push)
+bash-3.2$ git branch
+[?1h=* [32mmaster[m[m
+[K[?1l>bash-3.2$ git [K[K[K[Kpwd
+/Users/abhishek/GIT/demo/devops-git-demo/devops-git-demo
+bash-3.2$ cd ../
+bash-3.2$ ls
+devops-git-demo
+bash-3.2$ cd ../
+bash-3.2$ ls
+devops-git-demo
+bash-3.2$ cd[K[Kls
+devops-git-demo
+bash-3.2$ cd ../demo/
+bash-3.2$ ls
+devops-git-demo
+bash-3.2$ cd ../
+bash-3.2$ ls
+demo		git-demo
+bash-3.2$ cd demo/
+bash-3.2$ ls
+devops-git-demo
+bash-3.2$ file devops-git-demo/[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kls
+devops-git-demo
+bash-3.2$ cp git-de[K[K[K[K[K
